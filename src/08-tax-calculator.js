@@ -1,4 +1,4 @@
-/**
+ /**
  * 💰 Sam's Tax Calculator
  *
  * Sam is a freelance graphic designer who dreads tax season every year.
@@ -27,4 +27,24 @@
  */
 export function calculateTax(income) {
   // Your code here
-}
+
+  let Tax;
+  if(income<=0) return 0;
+
+  if(income<=10000){
+    Tax = 0
+  }
+  else if(income<=30000){
+    Tax = ((income-10000) * 10) / 100
+  }
+  else if(income<=70000){
+    Tax = 2000+(((income-30000) * 20) / 100)
+  }
+  else if(income>70000){
+    Tax = (((income-70000) * 30) / 100) + 10000
+  }
+  else{
+    return 0
+  }
+  return Tax
+} 

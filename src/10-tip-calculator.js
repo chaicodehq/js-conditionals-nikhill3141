@@ -10,7 +10,7 @@
  *   - 2 (poor)      → 10%
  *   - 3 (okay)      → 15%
  *   - 4 (good)      → 20%
- *   - 5 (excellent) → 25%
+ *   - 5 (excellent) → 25%  
  *
  * Return an object with:
  *   - tipPercentage: the percentage as a number (e.g., 15)
@@ -31,4 +31,42 @@
  */
 export function calculateTip(billAmount, serviceRating) {
   // Your code here
+  if(billAmount<=0)return null
+
+  let tipPercentage, tipAmount, totalAmount;
+
+  if(serviceRating === 1){
+    tipPercentage = 5
+    tipAmount = (billAmount * tipPercentage) / 100
+    totalAmount = billAmount + tipAmount
+    return {tipPercentage,tipAmount,totalAmount}
+  }
+  else if(serviceRating === 2){
+    tipPercentage = 10
+    tipAmount = (billAmount * tipPercentage) / 100
+    totalAmount = billAmount + tipAmount
+    return {tipPercentage,tipAmount,totalAmount}
+  }
+  else if(serviceRating === 3){
+    tipPercentage = 15
+    tipAmount = (billAmount * tipPercentage) / 100
+    totalAmount = billAmount + tipAmount
+    return {tipPercentage,tipAmount,totalAmount}
+  }
+  else if(serviceRating === 4){
+    tipPercentage = 20
+    tipAmount = (billAmount * tipPercentage) / 100
+    totalAmount = billAmount + tipAmount
+    return {tipPercentage,tipAmount,totalAmount}
+  }
+  else if(serviceRating === 5){
+    tipPercentage = 25
+    tipAmount = (billAmount * tipPercentage) / 100
+    totalAmount = billAmount + tipAmount
+    return {tipPercentage,tipAmount,totalAmount}
+  }
+  else{
+    return null
+  }
+
 }
